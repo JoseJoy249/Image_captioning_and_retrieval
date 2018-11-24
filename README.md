@@ -19,9 +19,8 @@ The encoder architecture is Resnet 101, decoder architecture is a double layer L
 The encoder architecture is Resnet 101, decoder architecture is a single layer LSTM with 512 dimensional hidden states for both layers. Each word is represented using 300 dimensional Glove Vectors which was kept fixed throughout training.
 
 ## Results
-![sample](images/comp1.png)
+![sample](images/comp1.png "120x120")
 ![sample](images/coco_result2.png)
-<img src=iamges/comp1.png width="256" height="256" title="Github Logo">
 
 ## Usage
 
