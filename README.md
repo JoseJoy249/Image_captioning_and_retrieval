@@ -39,7 +39,7 @@ This model was trained from scratch. The encoder architecture is Resnet 101, dec
 
 #### Model3
 
-This model was trained from scratch. The encoder architecture is Resnet 152, decoder architecture was single layer LSTM with 256 dimensional hidden states. Each word was represented using 126 dimensional embedding, which was  learned.
+This model was trained from scratch. The encoder architecture is Resnet 152, decoder architecture was single layer LSTM with 256 dimensional hidden states. Each word was represented using 128 dimensional embedding, which was  learned.
 
 #### Model4
 
