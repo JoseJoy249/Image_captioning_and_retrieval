@@ -14,6 +14,8 @@ All pretrained models can be accessed from [this link ](https://drive.google.com
 ## Usage
 
 #### 1. Install pycocotools
+
+pip install pycocotools
      
 #### 2. Clone repository
 
