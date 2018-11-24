@@ -11,19 +11,16 @@ The image retreival system uses COCO 2014 training and validation datasets and o
 
 All pretrained models can be accessed from [this link ](https://drive.google.com/drive/folders/1PsAwLMprM7lnWdrzq1PkQVP40A-a8d3s?ogsrc=32)
 
-#### Model1
+#### Models explored
+##### Model1
 This model was pretrained (by authors of the above mentioned repository). The encoder architecture is Resnet 152, decoder architecture was single layer LSTM with 512 dimensional hidden states. Each word is represented using 256 dimensional learnable embedding.
-
-#### Model2
+##### Model2
 The encoder architecture is Resnet 101, decoder architecture is a single layer LSTM with 512 dimensional hidden states. Each word is represented using 256 dimensional learnable embedding.
-
-#### Model3
+##### Model3
 The encoder architecture is Resnet 152, decoder architecture is a single layer LSTM with 256 dimensional hidden states. Each word is represented using 128 dimensional learnable embedding.
-
-#### Model4
+##### Model4
 The encoder architecture is Resnet 101, decoder architecture is a double layer LSTM with 512 dimensional hidden states for both layers. Each word is represented using 256 dimensional learnable embedding.
-
-#### Model5
+##### Model5
 The encoder architecture is Resnet 101, decoder architecture is a single layer LSTM with 512 dimensional hidden states for both layers. Each word is represented using 300 dimensional Glove Vectors which was kept fixed throughout training.
 
 ## Usage
@@ -47,9 +44,5 @@ git clone https://github.com/JoseJoy249/Image_captioning_and_retrieval.git
 
 #### 5. Run image_retrieval_system.ipynb
 
- learned.
-
-#### Model5
-This model was trained from scratch. The encoder architecture is Resnet 101, decoder architecture was single layer LSTM with 512 dimensional hidden states for both layers. Each word was represented using 300 dimensional  Glove Vectors which was kept fixed throughout training.
 
 
