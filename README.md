@@ -20,7 +20,6 @@ The encoder architecture is Resnet 101, decoder architecture is a single layer L
 
 ## Results
 ![sample](images/comp1.png)
-![sample](images/coco_result1.png)
 ![sample](images/coco_result2.png)
 
 ## Usage
