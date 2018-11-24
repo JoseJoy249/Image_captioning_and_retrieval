@@ -9,7 +9,7 @@ This code was tweeked to generate multiple encoder-decoder models
 
 The image retreival system uses COCO 2014 training and validation datasets and our own dataset scraped from Google Images (Proof of concept), from which the images are recommended.
 
-All pretrained models can be accessed from [this link ](https://drive.google.com/drive/folders/1PsAwLMprM7lnWdrzq1PkQVP40A-a8d3s?ogsrc=32)
+All pretrained models and data can be accessed from [this link ](https://drive.google.com/drive/folders/1PsAwLMprM7lnWdrzq1PkQVP40A-a8d3s?ogsrc=32)
 
 #### Models explored
 ##### Model1
