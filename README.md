@@ -20,7 +20,6 @@ The encoder architecture is Resnet 101, decoder architecture is a single layer L
 
 ## Results
 <img src="https://github.com/JoseJoy249/Image_captioning_and_retrieval/tree/master/images/comp1.png" height="24" width="48">
-![](images/comp1.png)
 ![alt text](images/coco_result1.png)
 ![alt text](images/coco_result2.png)
 
