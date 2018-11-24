@@ -21,6 +21,7 @@ The encoder architecture is Resnet 101, decoder architecture is a single layer L
 ## Results
 ![sample](images/comp1.png)
 ![sample](images/coco_result2.png)
+<img src=iamges/comp1.png width="256" height="256" title="Github Logo">
 
 ## Usage
 
