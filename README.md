@@ -14,10 +14,15 @@ All pretrained models can be accessed from [this link ](https://drive.google.com
 ## Usage
 
 #### 1. Install pycocotools
-
+     
 #### 2. Clone repository
 
 #### 3. Download COCO 2014 training and validation datasets
+
+      pip install -r requirements.txt 
+      chmod +x download.sh
+      ./download.sh
+    
 
 #### 4. Try running image_crapper.ipynb to create a dataset from google image, that also downloads captions
 
