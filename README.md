@@ -17,6 +17,8 @@ All pretrained models can be accessed from [this link ](https://drive.google.com
      
 #### 2. Clone repository
 
+git clone https://github.com/JoseJoy249/Image_captioning_and_retrieval.git
+
 #### 3. Download COCO 2014 training and validation datasets
 
       pip install -r requirements.txt 
