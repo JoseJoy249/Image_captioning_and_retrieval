@@ -34,8 +34,13 @@ git clone https://github.com/JoseJoy249/Image_captioning_and_retrieval.git
       chmod +x download.sh
       ./download.sh
     
+move the all files to /data
 
-#### 4. Try running image_crapper.ipynb to create a dataset from google image, that also downloads captions
+#### 4. Create Google image dataset (if needed) 
+Run image_crapper.ipynb to download images and captions. To download images of a specific context, change seach queries in the  taret_queries.txt file. 
+
+#### 5. Download pretrained models
+Pretrained models and other data can be downloaded from [this link ](https://drive.google.com/drive/folders/1PsAwLMprM7lnWdrzq1PkQVP40A-a8d3s?ogsrc=32). Trained models have to be moved to ./models. Vocabulary file and weight matirx to ./data
 
 #### 5. Run image_retrieval_system.ipynb
 
