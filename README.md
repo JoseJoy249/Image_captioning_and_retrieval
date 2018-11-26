@@ -24,6 +24,13 @@ The encoder architecture is Resnet 101, decoder architecture is a single layer L
 ##### Image retrieval
 ![sample](images/coco_result2.png)
 
+## Applications
+##### 1. As image recommender system
+This system can be used to recoomend images from a dataset, similar to a given input image / caption
+
+##### 2. Automated image dataset creation
+This works by giving a sample image to the system, which then learns the highly abstract textual features (captions), and uses this to query and acquire images from Google, which are similar to the input image. An entire dataset can be created  using this system. 
+
 ## Usage
 
 #### 1. Install pycocotools
