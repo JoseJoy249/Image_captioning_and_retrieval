@@ -1,20 +1,28 @@
-import torch
 import matplotlib.pyplot as plt
 import numpy as np 
 import pickle 
 import os
 import glob
 import cv2
+from PIL import Image
+from urllib import request
+from bs4 import BeautifulSoup
+import time
+import sys
+import json
+from io import BytesIO
 
+import torch
 from torchvision import transforms 
 from build_vocab import Vocabulary
-from PIL import Image
 from pycocotools.coco import COCO
 
-import model_files as models
 import nltk
 from nltk.corpus import stopwords
 stop_words = stopwords.words('english')
+
+import model_files as models
+
 
 def load_model(model, device, vocab):
     """function to load trained encoder and decoder models 
@@ -250,6 +258,76 @@ def retrieval_image(image_path, caption_dict, encoder, decoder, vocab, device, d
         if c==num:
             plt.show()
             return
+    
+def retrieval_google_image(image_path, encoder, decoder, vocab, device, directory = None, num = 5 ):
+    """function to implement image retreival directly from google images. It returns images similar to input image, 
+    based on caption using the entire Google Images as the dataset
+    Inputs
+    im_path = path to input image
+    encoder / decoder = encoder and decoder objects
+    vocab = vocabulary file
+    num = number of results to be displayed
+    directory = Directory where images are to be saved. if None, images not saved
+    """
+    
+    t1 = time.time()
+    sentence = get_captions(image_path, encoder, decoder, vocab, device)
+    
+    raw_images=[] # will contain hex represntation of image
+    captions = [] # will contain captions
+    header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"}
+
+    image_type="Action"
+    query='+'.join(sentence.split())
+    url="https://www.google.co.in/search?q="+query+"&source=lnms&tbm=isch"
+    temp = request.urlopen(request.Request(url,headers=header))
+    soup = BeautifulSoup( temp,'html.parser')
+    
+    ActualImages=[]# contains the link for Large original images, type of  image
+    for a in soup.find_all("div",{"class":"rg_meta"}):
+        dict1 = json.loads(a.text)
+        link , Type, Caption = dict1["ou"], dict1["ity"], dict1["pt"]
+        ActualImages.append((link,Type, Caption))
+
+    if directory != None and not os.path.exists(directory):
+        os.makedirs(directory)
+    
+    count = 0
+    image_paths = []
+    final_images = []
+    for i , (url , Type, Caption) in enumerate( ActualImages ):   
+        try:
+            req = request.Request(url, headers=header )
+            raw_img = request.urlopen(req).read()
+            final_img = Image.open(BytesIO(raw_img)).convert('RGB')
+            final_images.append(final_img)
+            if directory is not None:
+                image_name = directory + str( "/google_image_"+ "{0:06d}".format(count)+"."+ Type )
+                final_img.save(image_name, format='JPEG')
+            count += 1
+        except:
+            pass 
+        if count == num:
+            break
+
+    print("\t Predicted caption : ",sentence)
+    print("\t Google image recommendations : ")
+    
+    c = 0
+    plt.figure(figsize= (15,15))
+    for f in final_images:
+        try :
+            c += 1
+            plt.subplot(1,num,c)
+            plt.axis("off")
+            image = np.asarray(f )
+            plt.imshow( cv2.resize(image, (256,256) ))
+        except:
+            pass
+    
+    plt.show()
+    t2 = time.time() 
+    print('Time taken (sec) = {0:3.3f}'.format(t2-t1) )
     
     
 
