@@ -1,6 +1,6 @@
 # Image captioning and retreival
 This repository has the code needed to build image captioning networks that can be used as a backbone to design an 
-Image retrieval system. This system can recommends images similar to an input image from a dataset. Similarity is measured using Jaccard similarity metric which uses captions (high level text representation of the image). The image retreival system uses COCO 2014 training and validation datasets and our own dataset scraped from Google Images (Proof of concept), from which the images are recommended.
+Image retrieval system. This system can recommends images similar to an input image from a dataset. Similarity is measured using Jaccard similarity metric which uses captions (high level text representation of the image). The image retreival system was trained using COCO 2014 training dataset. It can recommend images from COCO training and validation datasets and our own dataset scraped from Google Images (Proof of concept), from which the images are recommended. The system can also retrieve similar images from Google images.
 
 The original code for image captioning entwork was taken from following the repository [pytorch-tutorial/image-captioning](https://github.com/yunjey/pytorch-tutorial/blob/master/tutorials/03-advanced/image_captioning/README.md)
 
