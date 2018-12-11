@@ -34,16 +34,15 @@ This works by giving a sample image to the system, which then learns the highly 
 ## Usage
 
 #### 1. Install pycocotools
-
 pip install pycocotools
      
 #### 2. Clone repository
-
 git clone https://github.com/JoseJoy249/Image_captioning_and_retrieval.git
 
-#### 3. Download COCO 2014 training and validation datasets
+#### 3. Install requirements
+      pip install -r requirements.txt  
 
-      pip install -r requirements.txt 
+#### 3. Download COCO 2014 training and validation datasets
       chmod +x download.sh
       ./download.sh
     
